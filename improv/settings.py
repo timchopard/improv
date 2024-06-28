@@ -7,8 +7,6 @@ env_path = load_dotenv(os.path.join(BASE_DIR, '.env'))
 
 DEBUG = os.environ.get("DJANGO_DEBUG") == "True"
 SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY")
-print(SECRET_KEY)
-
 
 ALLOWED_HOSTS = ['*']
 
@@ -40,7 +38,9 @@ ROOT_URLCONF = 'improv.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            BASE_DIR / "templates/",
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
